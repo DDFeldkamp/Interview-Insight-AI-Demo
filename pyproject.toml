@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools==75.1.0", "wheel==0.44.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gq-insight-copilot"
+version = "0.1.0"
+description = "AI research synthesis copilot for customer interview transcripts"
+readme = "README.md"
+requires-python = ">=3.9,<3.13"
+authors = [{ name = "Dakota Feldkamp" }]
+dependencies = [
+  "pydantic==2.8.2",
+  "python-dotenv==1.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.3.2",
+  "ruff==0.6.3",
+]
+typecheck = [
+  "mypy==1.11.2",
+]
+api = [
+  "fastapi==0.112.2",
+  "uvicorn==0.30.6",
+  "python-multipart==0.0.9",
+]
+llm = [
+  "openai==1.43.0",
+]
+all = [
+  "pytest==8.3.2",
+  "ruff==0.6.3",
+  "mypy==1.11.2",
+  "fastapi==0.112.2",
+  "uvicorn==0.30.6",
+  "python-multipart==0.0.9",
+  "openai==1.43.0",
+]
+
+[project.scripts]
+gq-copilot = "gq_insight_copilot.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+mypy_path = "src"
+plugins = ["pydantic.mypy"]

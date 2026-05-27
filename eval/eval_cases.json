@@ -1,0 +1,32 @@
+[
+  {
+    "name": "onboarding_repository_trust",
+    "input_dir": "sample_data/interviews",
+    "objective": "Find onboarding and research-repository friction for product managers",
+    "provider": "local",
+    "retriever": "tfidf",
+    "expectations": {
+      "min_groundedness": 0.95,
+      "min_source_coverage": 0.6,
+      "min_claim_evidence_coverage": 1.0,
+      "max_theme_redundancy": 0.35,
+      "min_themes": 3,
+      "required_terms": ["evidence", "repository", "source"]
+    }
+  },
+  {
+    "name": "ai_summary_trust",
+    "input_dir": "sample_data/interviews",
+    "objective": "Find trust issues in AI-generated interview summaries",
+    "provider": "local",
+    "retriever": "tfidf",
+    "expectations": {
+      "min_groundedness": 0.95,
+      "min_source_coverage": 0.6,
+      "min_claim_evidence_coverage": 1.0,
+      "max_theme_redundancy": 0.35,
+      "min_themes": 3,
+      "required_terms": ["trust", "source", "quote"]
+    }
+  }
+]

@@ -1,0 +1,2 @@
+[console_scripts]
+gq-copilot = gq_insight_copilot.cli:main

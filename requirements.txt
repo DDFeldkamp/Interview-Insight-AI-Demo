@@ -1,0 +1,3 @@
+# Minimal dependencies for the CLI demo. These are pinned to avoid slow pip resolver backtracking.
+pydantic==2.8.2
+python-dotenv==1.0.1
